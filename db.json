@@ -1,0 +1,11 @@
+{
+  "signupUsers": [
+    {
+      "name": "Neha Chaudhari",
+      "email": "neha.chaudhari@hitachivantara.com",
+      "mobile": 8308424958,
+      "password": "123",
+      "id": 1
+    }
+  ]
+}

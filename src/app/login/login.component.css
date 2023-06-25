@@ -1,0 +1,16 @@
+.card{
+    margin-top: 10px;
+    border: none;
+    border-radius: 14px;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 5px 12px lightblue;
+}
+
+.form-group{
+    margin-bottom: 10px;
+}
