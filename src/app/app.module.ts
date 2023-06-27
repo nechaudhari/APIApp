@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     SignupComponent,
     HomeComponent,
     NavbarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
