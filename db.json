@@ -13,6 +13,33 @@
       "mobile": 7350489178,
       "password": "123",
       "id": 3
+    },
+    {
+      "name": "Sara",
+      "email": "sara@gmail.com",
+      "mobile": 123456789,
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "Mansi D",
+      "email": "m@gmail.com",
+      "mobile": 1234567890,
+      "password": "123",
+      "id": 5
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 3,
+      "company": "Swift",
+      "model": "Dzire",
+      "cost": "967000",
+      "color": "White",
+      "owner": "Neha Chaudhari",
+      "reg_no": "MH 14 GH 2976",
+      "mob_no": "9876543210",
+      "address": "CSB Chowk"
     }
   ]
 }

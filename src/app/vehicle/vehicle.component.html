@@ -1,0 +1,109 @@
+<!-- navbar -->
+<div>
+    <ul>
+        <li><a><i class="fa fa-car m-1 text-warning" style="font-size:24px"></i>Zoomcar</a></li>
+        <!-- <li style="float:right"><a  class="text-danger" routerLink="/login">Logout</a></li> -->
+        <button class="btn btn-danger m-3" style="float:right" type="button"  
+                routerLink="/login">Logout</button>
+        <button class="btn btn-success m-3" style="float:right" type="button"  
+                data-toggle="modal" data-target="#exampleModal" (click)="clickAddVehicle()">Add Vehicle</button>
+      </ul>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="form-group m-2">
+            <input type="text" formControlName="company" class="form-control" id="company" placeholder="Company">
+          </div>
+          <div class="form-group m-2">
+            <input type="text" formControlName="model" class="form-control" id="model"  placeholder="Model">
+          </div>
+          <div class="form-group m-2">
+            <input type="text" formControlName="cost" class="form-control" id="cost" placeholder="Cost">
+          </div>
+          <div class="form-group m-2">
+            <input type="text" formControlName="color" class="form-control" id="color" placeholder="Color">
+          </div>
+          <div class="form-group m-2">
+            <input type="text" formControlName="owner" class="form-control" id="owner" placeholder="Owner Name">
+          </div>
+          <div class="form-group m-2">
+            <input type="text" formControlName="reg_no" class="form-control" id="reg_no" placeholder="Registration Number">
+          </div>
+          <div class="form-group m-2">
+            <input type="text" formControlName="mob_no" class="form-control" id="mob_no" placeholder="Owner's Mobile number">
+          </div>
+          <div class="form-group m-2">
+            <input type="text" formControlName="address" class="form-control" id="address" placeholder="Owner's address">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="postVehicle()" *ngIf="showAdd" class="btn btn-primary">Add</button>
+        <button type="button" (click)="updateVehicleDetails()" *ngIf="showUpdate" class="btn btn-primary">Update</button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+<!-- Vehicle data -->
+<div class="container bg-light p-3 mt-5">
+  <div class="card p-3">
+    <div class="card-body">
+      <div class="grid-container">
+        <div class="grid-item" *ngFor="let row of vehicleData">
+          <h2>Company: {{row.company}}</h2>
+          <p>Model: {{row.model}}</p>
+          <p>Cost: Rs {{row.cost}}</p>
+
+          <span class="btn">
+            <i class="fa fa-eye text-primary mx-3" (click)="getVehicleDetails(row.id)" data-toggle="modal" data-target="#eye" aria-hidden="true"></i>
+            <i class="fa fa-pencil text-info mx-3" (click)="onEdit(row)" data-toggle="modal" data-target="#exampleModal" aria-hidden="true"></i>
+            <i class="fa fa-trash text-danger mx-3" (click)="deleteVehicle(row)"></i>
+          </span>
+
+          <!-- modal eye -->
+          <div class="modal fade" id="eye" tabindex="-1" role="dialog" aria-labelledby="eyeLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content text-dark">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="eyeLabel">{{row.company}} {{row.model}}</h5>
+                  <button type="button" style="float:right" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Registration No: {{vehicleDetails?.reg_no}}</p>
+                  <p>Color: {{vehicleDetails?.color}}</p>
+                  <p>Owner: {{vehicleDetails?.owner}}</p>
+                  <p>Owner's mob. no: {{vehicleDetails?.mob_no}}</p>
+                  <p>Owner's address: {{vehicleDetails?.address}}</p>
+                </div>
+                <!-- <div class="modal-footer">
+                  <span class="btn">
+                    <i class="fa fa-pencil text-info mx-3" aria-hidden="true" (click)="onEdit(row)"></i>
+                    <i class="fa fa-trash text-danger mx-3" (click)="deleteVehicle(row)"></i>
+                  </span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

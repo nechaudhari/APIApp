@@ -9,8 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { QuestionsComponent } from './questions/questions.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+
 
 
 @NgModule({
@@ -20,8 +20,7 @@ import { QuestionsComponent } from './questions/questions.component';
     SignupComponent,
     HomeComponent,
     NavbarComponent,
-    WelcomeComponent,
-    QuestionsComponent
+    VehicleComponent
   ],
   imports: [
     BrowserModule,
